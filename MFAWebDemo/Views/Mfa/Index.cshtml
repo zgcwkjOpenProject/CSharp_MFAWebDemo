@@ -1,0 +1,39 @@
+﻿@{
+    var userId = ViewBag.UserId as string;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+    <title>MFA 生成页面</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>帐号：</label>
+            <input type="text" id="userId" name="userId" value="@userId">
+        </div>
+        <div>
+            <img style="width:200px" src="/MFA/Generate?userId=@userId" alt="QR Code">
+        </div>
+        <div>
+            <button type="submit">生成</button>
+        </div>
+    </form>
+</body>
+</html>
